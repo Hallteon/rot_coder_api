@@ -1,9 +1,8 @@
 from rest_framework import serializers
-
-from encoder.models import Rot
+from coder.models import Rot
 
 
 class RotSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rot
-        fields = '__all__'
+        fields = ['rot', 'usages']

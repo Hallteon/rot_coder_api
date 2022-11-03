@@ -3,8 +3,8 @@ from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from encoder.models import Rot
-from encoder.serializers import RotSerializer
+from coder.models import Rot
+from coder.serializers import RotSerializer
 from utils.coders import rot_encode
 
 
@@ -15,7 +15,7 @@ class RotCoderAPIView(APIView):
         rot_code = Rot.objects.filter(rot=int(request.query_params['rot']))
 
         if list(rot_code):
-            rot_code.update(usages=F('amount') + 1)
+            rot_code.update(usages=F('usages') + 1)
 
         else:
             Rot.objects.create(rot=int(request.data['rot']))
@@ -27,7 +27,7 @@ class RotCoderAPIView(APIView):
         rot_code = Rot.objects.filter(rot=int(request.data['rot']))
 
         if list(rot_code):
-            rot_code.update(usages=F('amount') + 1)
+            rot_code.update(usages=F('usages') + 1)
 
         else:
             Rot.objects.create(rot=int(request.data['rot']))
