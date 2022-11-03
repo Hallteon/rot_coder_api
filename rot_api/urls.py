@@ -16,11 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from encoder.views import RotCoderAPIView, RotStatusAPIView
+from encoder.views import RotCoderAPIView, RotStatusListAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/encode/', RotCoderAPIView.as_view()),
     path('api/decode/', RotCoderAPIView.as_view()),
-    path('api/status/', RotStatusAPIView.as_view())
+    path('api/status/', RotStatusListAPIView.as_view())
 ]

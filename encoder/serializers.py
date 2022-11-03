@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from rot_api.encoder.models import Rot
+from encoder.models import Rot
 
 
 class RotSerializer(serializers.ModelSerializer):
