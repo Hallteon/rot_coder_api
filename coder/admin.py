@@ -1,3 +1,4 @@
 from django.contrib import admin
+from coder.models import Rot
 
-# Register your models here.
+admin.site.register(Rot)

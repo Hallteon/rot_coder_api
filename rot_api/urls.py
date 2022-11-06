@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/encode/', RotCoderAPIView.as_view()),
     path('api/decode/', RotCoderAPIView.as_view()),
-    path('api/status/', RotStatusListAPIView.as_view())
+    path('api/stats/', RotStatusListAPIView.as_view())
 ]
